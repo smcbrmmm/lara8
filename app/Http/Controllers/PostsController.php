@@ -83,9 +83,9 @@ class PostsController extends Controller
         $post = Post::findOrFail($id);
         $this->authorize('update', $post);
 
-        if (Gate::denies('edit-post', $post)) {
-            return redirect()->route('posts.show', ['post' => $id]);
-        }
+//        if (Gate::denies('edit-post', $post)) {
+//            return redirect()->route('posts.show', ['post' => $id]);
+//        }
         return view('posts.edit', [
             'post' => $post
         ]);
